@@ -109,7 +109,7 @@ const i18n = {
     about_p1: 'I\'m 19, living in Russia. I constantly try new activities, look for interesting directions, and try to find my thing — something I won\'t want to let go of.',
     about_p2: 'My uncle is a programmer, he taught me the basics. Tried HTML/CSS/JS, Python — didn\'t really click. But recently I bought an Arduino and got hooked: Pro Micro, BadUSB, PowerShell experiments, ASCII art. Before that I built a Telegram bot <strong>MRX TRAINING BOT</strong>. It\'s just a hobby for now, but I have tons of ideas.',
     about_p3: 'I\'m also musical — 9 years of music school: piano and vocals, graduated with honors.',
-    about_p4: 'I\'m into sports too. Tried a bunch as a kid: boxing, sambo, football, parkour. Now I hit the gym, climb sometimes, and recently started learning traditional bow archery with my uncle\'s Samick Polaris.',
+    about_p4: 'I\'m into sports too. Tried a bunch as a kid: boxing, sambo, football, parkour. Now I hit the gym, climb sometimes, and recently started learning traditional archery with a Samick Polaris bow.',
 
     /* Projects section */
     projects_label: 'Projects',
