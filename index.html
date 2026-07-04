@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Сорокин Кирилл</title>
+  <meta name="description" content="Кирилл Сорокин. Telegram-боты, Arduino, BadUSB и другие эксперименты" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="#" class="logo">
+        <span class="logo-dot"></span>
+        Сорокин Кирилл
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Меню">☰</button>
+      <nav>
+        <ul class="nav-desktop" id="navDesktop">
+          <li><a href="#about" data-i18n="nav_about" class="active">Обо мне</a></li>
+          <li><a href="#projects" data-i18n="nav_projects">Проекты</a></li>
+          <li><a href="#arduino" data-i18n="nav_arduino">Arduino</a></li>
+          <li><a href="#ideas" data-i18n="nav_ideas">Идеи</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Контакты</a></li>
+        </ul>
+      </nav>
+      <button class="lang-toggle" id="langToggle" data-i18n="lang_btn">EN</button>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" id="hero">
+      <div class="hero-bg">
+        <div class="orb"></div>
+        <div class="orb"></div>
+      </div>
+      <div class="container hero-content">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            <span data-i18n="hero_badge">Россия · 19 лет · Студент</span>
+          </div>
+          <h1 data-i18n="hero_title">
+            Привет! Я <span class="highlight">Кирилл</span><br />
+            Разбираю IT на практике
+          </h1>
+          <p data-i18n="hero_desc">
+            Arduino, BadUSB, Telegram-боты — учусь через собственные проекты.
+            Люблю железо, игры и когда всё работает.
+          </p>
+          <div class="hero-buttons">
+            <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">
+              Мои проекты →</a>
+            <a href="#about" class="btn btn-outline" data-i18n="hero_btn_about">
+              Обо мне</a>
+          </div>
+        </div>
+        <div class="hero-image-wrapper">
+          <div class="hero-image">
+            <div class="hero-image-ring"></div>
+            <img
+              src="images/about/profile.jpg"
+              alt="Фото профиля"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section class="section" id="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-text">
+            <span class="section-label" data-i18n="about_label">Обо мне</span>
+            <h2 class="section-title" data-i18n="about_title">Кто я и чем живу</h2>
+            <p data-i18n="about_p1">
+              Мне 19 лет, я живу в России. Постоянно пробую новые
+              активности, ищу интересные направления и стараюсь найти
+              своё дело, чтобы уже не отпускать его.
+            </p>
+            <p data-i18n="about_p2">
+              Мой дядя программист, он и научил основам. Пробовал
+              HTML/CSS/JS, Python — не особо заходило. А недавно купил
+              Arduino и подорвался: Pro Micro, BadUSB, эксперименты
+              с PowerShell и ASCII-артом. А до этого написал
+              Telegram-бота <strong>MRX TRAINING BOT</strong>.
+              Пока это просто хобби, но идей — вагон.
+            </p>
+            <p data-i18n="about_p3">
+              Ещё я музыкальный — 9 лет музыкальной школы: фортепиано
+              и вокал, получил красный диплом.
+            </p>
+            <p data-i18n="about_p4">
+              Со спортом я тоже дружу. В детстве успел перепробовать
+              кучу всего: бокс, самбо, футбол, паркур. Сейчас стараюсь
+              поддерживать форму в тренажёрном зале, иногда выбираюсь
+              на скалолазание, а недавно начал учиться стрельбе из
+              классического лука Samick Polaris.
+            </p>
+          </div>
+          <div class="about-gallery">
+            <img src="images/about/workbench.jpg" alt="Моё рабочее место" loading="lazy" />
+            <img src="images/about/arduino.jpg" alt="Arduino" loading="lazy" />
+            <img src="images/about/coding.jpg" alt="Код" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PROJECTS ===== -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-label" data-i18n="projects_label">Проекты</span>
+          <h2 class="section-title" data-i18n="projects_title">Мои проекты</h2>
+          <p class="section-subtitle" data-i18n="projects_subtitle">
+            Пока что негусто, но без первого шага не бывает второго.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project: MRX TRAINING BOT -->
+          <div class="project-card animate-on-scroll">
+            <img
+              class="project-card-image"
+              src="images/projects/mrx-bot.jpg"
+              alt="MRX TRAINING BOT"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="project_bot_tag1">Python</span>
+                <span class="project-tag purple" data-i18n="project_bot_tag2">Telegram API</span>
+                <span class="project-tag green" data-i18n="project_bot_tag3">Бот</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="project_bot_title">MRX TRAINING BOT</h3>
+              <p class="project-card-desc" data-i18n="project_bot_desc">
+                Telegram-бот для тренировок: логирование подходов,
+                статистика, напоминалки. Написан на Python.
+                Сейчас дорабатывается — хочу добавить графики
+                прогресса и автопланы.
+              </p>
+              <a href="https://t.me/MRX_TRAINING_BOT" target="_blank" class="btn btn-primary" style="margin-top: 8px;" data-i18n="project_bot_btn">
+                Открыть в Telegram →</a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== ARDUINO ===== -->
+    <section class="section" id="arduino">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-label" data-i18n="arduino_label">На Arduino</span>
+          <h2 class="section-title" data-i18n="arduino_title">Эксперименты с микроконтроллерами</h2>
+          <p class="section-subtitle" data-i18n="arduino_subtitle">
+            Недавно увлёкся, но уже есть пара занятных штук.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Arduino Project 1: BadUSB Pro Micro -->
+          <div class="project-card animate-on-scroll">
+            <img
+              class="project-card-image"
+              src="images/projects/promicro.jpg"
+              alt="BadUSB на Pro Micro"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="arduino_badusb_tag1">Pro Micro</span>
+                <span class="project-tag blue" data-i18n="arduino_badusb_tag2">BadUSB</span>
+                <span class="project-tag purple" data-i18n="arduino_badusb_tag3">HID</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="arduino_badusb_title">BadUSB на Pro Micro</h3>
+              <p class="project-card-desc" data-i18n="arduino_badusb_desc">
+                Arduino Pro Micro притворяется USB-клавиатурой. Открывает
+                PowerShell, выводит ASCII-анимацию Never Gonna Give You Up,
+                показывает сообщения в txt, запускает ссылки.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-badusb" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-badusb">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_badusb">C++ (Arduino Pro Micro)</span>
+                <button class="btn-copy" data-target="code-badusb" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="cm">// BadUSB — клавиатурная эмуляция на Pro Micro</span>
+<span class="pp">#include</span> &lt;Keyboard.h&gt;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Keyboard.<span class="fn">begin</span>();
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+
+  <span class="cm">// Win + R → powershell</span>
+  Keyboard.<span class="fn">press</span>(KEY_LEFT_GUI);
+  Keyboard.<span class="fn">press</span>(<span class="num">'r'</span>);
+  <span class="fn">delay</span>(<span class="num">300</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">500</span>);
+  Keyboard.<span class="fn">print</span>(<span class="str">"powershell"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">1500</span>);
+
+  <span class="cm">// ASCII-анимация Rickroll</span>
+  Keyboard.<span class="fn">print</span>(<span class="str">"echo 'Never Gonna Give You Up'"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">200</span>);
+  Keyboard.<span class="fn">print</span>(<span class="str">"echo '  ╔══╗╔══╗╔╗─╔╗╔══╗╔══╗'"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">200</span>);
+  Keyboard.<span class="fn">print</span>(<span class="str">"echo '  ╚╗╔╝║╔═╝║║─║║║╔╗║║╔═╝'"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+
+  <span class="cm">// Создаём txt-файл с сообщением</span>
+  Keyboard.<span class="fn">print</span>(<span class="str">"echo 'MRX был тут ;)' &gt; Desktop\\hello.txt"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+
+  <span class="cm">// Открываем видео</span>
+  Keyboard.<span class="fn">print</span>(<span class="str">"Start https://youtu.be/dQw4w9WgXcQ"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {}</pre>
+            </div>
+          </div>
+
+          <!-- Arduino Project 2: Пищалка с мелодией -->
+          <div class="project-card animate-on-scroll">
+            <img
+              class="project-card-image"
+              src="images/projects/arduino-board.jpg"
+              alt="Arduino плата"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="arduino_buzzer_tag1">Arduino</span>
+                <span class="project-tag green" data-i18n="arduino_buzzer_tag2">Звук</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="arduino_buzzer_title">Кузнечик — мелодия на пищалке</h3>
+              <p class="project-card-desc" data-i18n="arduino_buzzer_desc">
+                Первый проект после покупки набора. Пьезопищалка (buzzer)
+                играет мелодию «В траве сидел кузнечик» по нажатию кнопки.
+                База, но с неё всё началось.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-buzzer" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-buzzer">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_buzzer">C++ (Arduino)</span>
+                <button class="btn-copy" data-target="code-buzzer" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="cm">// Кузнечик — мелодия на пьезопищалке</span>
+<span class="kw">const int</span> BUZZER = <span class="num">9</span>;
+<span class="kw">const int</span> BUTTON = <span class="num">2</span>;
+
+<span class="cm">// Частоты нот мелодии</span>
+<span class="kw">int</span> melody[] = {
+  <span class="num">262</span>, <span class="num">262</span>, <span class="num">392</span>, <span class="num">392</span>, <span class="num">440</span>, <span class="num">440</span>, <span class="num">392</span>,
+  <span class="num">349</span>, <span class="num">349</span>, <span class="num">330</span>, <span class="num">330</span>, <span class="num">294</span>, <span class="num">294</span>, <span class="num">262</span>
+};
+<span class="kw">int</span> noteDurations[] = {
+  <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">400</span>,
+  <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">200</span>, <span class="num">400</span>
+};
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(BUZZER, OUTPUT);
+  <span class="fn">pinMode</span>(BUTTON, INPUT_PULLUP);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="kw">if</span> (<span class="fn">digitalRead</span>(BUTTON) == LOW) {
+    <span class="fn">playMelody</span>();
+  }
+}
+
+<span class="kw">void</span> <span class="fn">playMelody</span>() {
+  <span class="kw">for</span> (<span class="kw">int</span> i = <span class="num">0</span>; i &lt; <span class="num">14</span>; i++) {
+    <span class="fn">tone</span>(BUZZER, melody[i], noteDurations[i]);
+    <span class="fn">delay</span>(noteDurations[i] + <span class="num">50</span>);
+    <span class="fn">noTone</span>(BUZZER);
+  }
+}</pre>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== IDEAS ===== -->
+    <section class="section" id="ideas">
+      <div class="container">
+        <div class="projects-header">
+          <span class="section-label" data-i18n="ideas_label">В планах</span>
+          <h2 class="section-title" data-i18n="ideas_title">Что хочу сделать</h2>
+          <p class="section-subtitle" data-i18n="ideas_subtitle">
+            Идей куча, руки дойдут — реализую.
+          </p>
+        </div>
+
+        <div class="projects-grid">
+          <div class="project-card animate-on-scroll">
+            <img
+              class="project-card-image"
+              src="https://picsum.photos/seed/ideas/800/500"
+              alt="Ideas"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="ideas_card_tag1">Arduino</span>
+                <span class="project-tag blue" data-i18n="ideas_card_tag2">Электроника</span>
+                <span class="project-tag purple" data-i18n="ideas_card_tag3">ПО</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="ideas_card_title">Ближайшие планы</h3>
+              <p class="project-card-desc" data-i18n="ideas_card_desc">
+                Проекты, которые хочу запилить в ближайшее время:
+              </p>
+              <ul style="color: var(--text-secondary); font-size: 0.9rem; line-height: 1.8; padding-left: 20px; margin-bottom: 8px;">
+                <li data-i18n="ideas_item1">🔊 Отвлекающее устройство — Bluetooth-модуль, удалённый запуск звука</li>
+                <li data-i18n="ideas_item2">🚗 Джампер — машинка с управлением через ПК или телефон</li>
+                <li data-i18n="ideas_item3">💡 Умный свет — управление освещением в комнате с голосом/кнопкой</li>
+                <li data-i18n="ideas_item4">🎤 Смена голоса — через ПК, обработать микрофон в реальном времени</li>
+                <li data-i18n="ideas_item5">⚡ BadUSB: перезагрузка ПК, перехват камеры, неуязвимые видео</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER / CONTACT ===== -->
+  <footer class="footer" id="contact">
+    <div class="container footer-inner">
+      <div class="footer-text" data-i18n="footer_text">
+        &copy; 2026 Кирилл Сорокин. Сделано с ❤️
+      </div>
+      <div class="footer-links">
+        <a href="https://github.com/handmade12" target="_blank">GitHub</a>
+        <a href="https://t.me/Mrx_20k" target="_blank">Telegram</a>
+        <a href="https://www.instagram.com/mrx_20k/" target="_blank">Instagram</a>
+        <a href="https://www.linkedin.com/in/kirill-sorokin-" target="_blank">LinkedIn</a>
+        <a href="mailto:SorokinyKirilly@icloud.com">Почта</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/i18n.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
