@@ -23,9 +23,8 @@ function applyLanguage(lang) {
 
   // Live translation for code-toggle buttons (not keyed via data-i18n)
   document.querySelectorAll('.btn-code').forEach(btn => {
-    const isOpen = btn.closest('.code-block')
-      ? btn.closest('.code-block').classList.contains('open')
-      : false;
+    const targetEl = document.getElementById(btn.dataset.target);
+    const isOpen = targetEl ? targetEl.classList.contains('open') : false;
     const icon = btn.querySelector('.icon');
     if (isOpen) {
       btn.innerHTML = (icon ? icon.outerHTML + ' ' : '') + t.btn_hide_code;
