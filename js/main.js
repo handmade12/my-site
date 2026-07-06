@@ -41,6 +41,17 @@ function applyLanguage(lang) {
     }
   });
 
+  // Update <title>
+  if (t.page_title) {
+    document.title = t.page_title;
+  }
+
+  // Update <meta name="description">
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && t.meta_desc) {
+    metaDesc.setAttribute('content', t.meta_desc);
+  }
+
   // Save preference
   localStorage.setItem('lang', lang);
   document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';

@@ -77,8 +77,14 @@ const i18n = {
     ideas_item4: '🎤 Смена голоса — через ПК, обработать микрофон в реальном времени',
     ideas_item5: '⚡ BadUSB: перезагрузка ПК, перехват камеры, неуязвимые видео',
 
+    /* Page metadata */
+    page_title: 'Кирилл Сорокин',
+    meta_desc: 'Кирилл Сорокин. Telegram-боты, Arduino, BadUSB и другие эксперименты',
+    logo_text: 'Сорокин Кирилл',
+
     /* Footer */
     footer_text: '© 2026 Кирилл Сорокин. Сделано с ❤️',
+    footer_email: 'Почта',
 
     /* Shared buttons */
     btn_show_code: 'Показать код',
@@ -160,8 +166,14 @@ const i18n = {
     ideas_item4: '🎤 Voice changer — real-time microphone processing on PC',
     ideas_item5: '⚡ BadUSB: PC reboot, camera hijack, unclosable videos',
 
+    /* Page metadata */
+    page_title: 'Kirill Sorokin',
+    meta_desc: 'Kirill Sorokin. Telegram bots, Arduino, BadUSB and other experiments',
+    logo_text: 'Kirill Sorokin',
+
     /* Footer */
     footer_text: '© 2026 Kirill Sorokin. Made with ❤️',
+    footer_email: 'Email',
 
     /* Shared buttons */
     btn_show_code: 'Show Code',
