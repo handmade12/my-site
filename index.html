@@ -171,27 +171,32 @@
           </p>
         </div>
 
+        <div class="filter-tabs" role="tablist">
+          <button class="filter-tab active" data-filter="badusb" data-i18n="filter_badusb">BadUSB</button>
+          <button class="filter-tab" data-filter="arduino" data-i18n="filter_arduino">Arduino</button>
+        </div>
+
         <div class="projects-grid">
 
-          <!-- Arduino Project 1: BadUSB Pro Micro -->
-          <div class="project-card animate-on-scroll">
+          <!-- Arduino Project 1: Pro Micro test -->
+          <div class="project-card animate-on-scroll" data-category="badusb">
             <img
               class="project-card-image"
               src="images/projects/promicro.jpg"
-              alt="BadUSB на Pro Micro"
+              alt="Pro Micro blink test"
               loading="lazy"
             />
             <div class="project-card-body">
               <div class="project-card-tags">
                 <span class="project-tag" data-i18n="arduino_badusb_tag1">Pro Micro</span>
-                <span class="project-tag blue" data-i18n="arduino_badusb_tag2">BadUSB</span>
-                <span class="project-tag purple" data-i18n="arduino_badusb_tag3">HID</span>
+                <span class="project-tag green" data-i18n="arduino_badusb_tag2">Тест</span>
+                <span class="project-tag purple" data-i18n="arduino_badusb_tag3">Leonardo</span>
               </div>
-              <h3 class="project-card-title" data-i18n="arduino_badusb_title">BadUSB на Pro Micro</h3>
+              <h3 class="project-card-title" data-i18n="arduino_badusb_title">Pro Micro: проверка связи</h3>
               <p class="project-card-desc" data-i18n="arduino_badusb_desc">
-                Arduino Pro Micro притворяется USB-клавиатурой. Открывает
-                PowerShell, выводит ASCII-анимацию Never Gonna Give You Up,
-                показывает сообщения в txt, запускает ссылки.
+                Базовый тест платы Pro Micro. Мигает встроенным светодиодом.
+                В Arduino IDE нужно выбрать плату <strong>Arduino Leonardo</strong>
+                — Pro Micro нет в списке, но они совместимы.
               </p>
               <div class="project-card-actions">
                 <button class="btn-code" data-target="code-badusb" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
@@ -204,54 +209,21 @@
                 <span class="code-lang" data-i18n="code_lang_badusb">C++ (Arduino Pro Micro)</span>
                 <button class="btn-copy" data-target="code-badusb" data-i18n="btn_copy">📋 Копировать</button>
               </div>
-              <pre><span class="cm">// BadUSB — клавиатурная эмуляция на Pro Micro</span>
-<span class="pp">#include</span> &lt;Keyboard.h&gt;
-
-<span class="kw">void</span> <span class="fn">setup</span>() {
-  Keyboard.<span class="fn">begin</span>();
-  <span class="fn">delay</span>(<span class="num">1000</span>);
-
-  <span class="cm">// Win + R → powershell</span>
-  Keyboard.<span class="fn">press</span>(KEY_LEFT_GUI);
-  Keyboard.<span class="fn">press</span>(<span class="num">'r'</span>);
-  <span class="fn">delay</span>(<span class="num">300</span>);
-  Keyboard.<span class="fn">releaseAll</span>();
-  <span class="fn">delay</span>(<span class="num">500</span>);
-  Keyboard.<span class="fn">print</span>(<span class="str">"powershell"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
-  <span class="fn">delay</span>(<span class="num">1500</span>);
-
-  <span class="cm">// ASCII-анимация Rickroll</span>
-  Keyboard.<span class="fn">print</span>(<span class="str">"echo 'Never Gonna Give You Up'"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
-  <span class="fn">delay</span>(<span class="num">200</span>);
-  Keyboard.<span class="fn">print</span>(<span class="str">"echo '  ╔══╗╔══╗╔╗─╔╗╔══╗╔══╗'"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
-  <span class="fn">delay</span>(<span class="num">200</span>);
-  Keyboard.<span class="fn">print</span>(<span class="str">"echo '  ╚╗╔╝║╔═╝║║─║║║╔╗║║╔═╝'"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
-
-  <span class="cm">// Создаём txt-файл с сообщением</span>
-  Keyboard.<span class="fn">print</span>(<span class="str">"echo 'MRX был тут ;)' &gt; Desktop\\hello.txt"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
-
-  <span class="cm">// Открываем видео</span>
-  Keyboard.<span class="fn">print</span>(<span class="str">"Start https://youtu.be/dQw4w9WgXcQ"</span>);
-  Keyboard.<span class="fn">press</span>(KEY_RETURN);
-  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+              <pre><span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_BUILTIN, OUTPUT);
 }
 
-<span class="kw">void</span> <span class="fn">loop</span>() {}</pre>
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, HIGH);
+  <span class="fn">delay</span>(<span class="num">500</span>);
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, LOW);
+  <span class="fn">delay</span>(<span class="num">500</span>);
+}</pre>
             </div>
           </div>
 
           <!-- Arduino Project 2: Пищалка с мелодией -->
-          <div class="project-card animate-on-scroll">
+          <div class="project-card animate-on-scroll" data-category="arduino">
             <img
               class="project-card-image"
               src="images/projects/arduino-board.jpg"
@@ -280,11 +252,9 @@
                 <span class="code-lang" data-i18n="code_lang_buzzer">C++ (Arduino)</span>
                 <button class="btn-copy" data-target="code-buzzer" data-i18n="btn_copy">📋 Копировать</button>
               </div>
-              <pre><span class="cm">// Кузнечик — мелодия на пьезопищалке</span>
-<span class="kw">const int</span> BUZZER = <span class="num">9</span>;
+              <pre><span class="kw">const int</span> BUZZER = <span class="num">9</span>;
 <span class="kw">const int</span> BUTTON = <span class="num">2</span>;
 
-<span class="cm">// Частоты нот мелодии</span>
 <span class="kw">int</span> melody[] = {
   <span class="num">262</span>, <span class="num">262</span>, <span class="num">392</span>, <span class="num">392</span>, <span class="num">440</span>, <span class="num">440</span>, <span class="num">392</span>,
   <span class="num">349</span>, <span class="num">349</span>, <span class="num">330</span>, <span class="num">330</span>, <span class="num">294</span>, <span class="num">294</span>, <span class="num">262</span>
@@ -315,6 +285,180 @@
             </div>
           </div>
 
+          <!-- Arduino Project 3: Rick Roll -->
+          <div class="project-card animate-on-scroll" data-category="badusb">
+            <img
+              class="project-card-image"
+              src="images/projects/rickroll.png"
+              alt="BadUSB Rick Roll"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="rickroll_tag1">Pro Micro</span>
+                <span class="project-tag blue" data-i18n="rickroll_tag2">BadUSB</span>
+                <span class="project-tag purple" data-i18n="rickroll_tag3">CMD</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="rickroll_title">BadUSB: Rick Roll в CMD</h3>
+              <p class="project-card-desc" data-i18n="rickroll_desc">
+                Pro Micro через Win+R запускает cmd, разворачивает окно, красит фон в хакерский зелёный и выводит ASCII-анимацию.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-rickroll" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-rickroll">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_rickroll">C++ (Arduino Pro Micro)</span>
+                <button class="btn-copy" data-target="code-rickroll" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="pp">#include</span> &lt;Keyboard.h&gt;
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">delay</span>(<span class="num">5000</span>);
+  Keyboard.<span class="fn">begin</span>();
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+
+  Keyboard.<span class="fn">press</span>(KEY_LEFT_GUI);
+  Keyboard.<span class="fn">press</span>(<span class="num">'r'</span>);
+  <span class="fn">delay</span>(<span class="num">100</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">500</span>);
+
+  Keyboard.<span class="fn">print</span>(<span class="str">"cmd"</span>);
+  <span class="fn">delay</span>(<span class="num">200</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">100</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+
+  Keyboard.<span class="fn">print</span>(<span class="str">"mode con: cols=200 lines=60"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">100</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">200</span>);
+  Keyboard.<span class="fn">print</span>(<span class="str">"color 0a"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">100</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+
+  Keyboard.<span class="fn">print</span>(<span class="str">"tree c:\\"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+
+  Keyboard.<span class="fn">end</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {}</pre>
+            </div>
+          </div>
+
+          <!-- Arduino Project 4: TXT message -->
+          <div class="project-card animate-on-scroll" data-category="badusb">
+            <img
+              class="project-card-image"
+              src="images/projects/placeholder-file.svg"
+              alt="BadUSB TXT message"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="txtmsg_tag1">Pro Micro</span>
+                <span class="project-tag blue" data-i18n="txtmsg_tag2">BadUSB</span>
+                <span class="project-tag green" data-i18n="txtmsg_tag3">PowerShell</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="txtmsg_title">BadUSB: сообщение в .txt</h3>
+              <p class="project-card-desc" data-i18n="txtmsg_desc">
+                Pro Micro через PowerShell создаёт .txt файл с кастомным сообщением и открывает его в Блокноте — быстро и без лишних окон.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-txtmsg" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-txtmsg">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_txtmsg">C++ (Arduino Pro Micro)</span>
+                <button class="btn-copy" data-target="code-txtmsg" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="pp">#include</span> <span class="str">"Keyboard.h"</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Keyboard.<span class="fn">begin</span>();
+  <span class="fn">delay</span>(<span class="num">2000</span>);
+
+  Keyboard.<span class="fn">press</span>(KEY_LEFT_GUI);
+  Keyboard.<span class="fn">press</span>(<span class="num">'r'</span>);
+  <span class="fn">delay</span>(<span class="num">50</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">200</span>);
+
+  Keyboard.<span class="fn">print</span>(<span class="str">"powershell -W Hidden -C \"'hello', 'I''m here'|Set-Content $env:TEMP\\n.txt;Start-Process notepad $env:TEMP\\n.txt\""</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  <span class="fn">delay</span>(<span class="num">50</span>);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+
+  Keyboard.<span class="fn">end</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {}</pre>
+            </div>
+          </div>
+
+          <!-- Arduino Project 5: YouTube opener -->
+          <div class="project-card animate-on-scroll" data-category="badusb">
+            <img
+              class="project-card-image"
+              src="images/projects/placeholder-video.svg"
+              alt="BadUSB YouTube"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="ytopen_tag1">Pro Micro</span>
+                <span class="project-tag blue" data-i18n="ytopen_tag2">BadUSB</span>
+                <span class="project-tag" data-i18n="ytopen_tag3">YouTube</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="ytopen_title">BadUSB: открывает YouTube</h3>
+              <p class="project-card-desc" data-i18n="ytopen_desc">
+                Pro Micro через Win+R запускает cmd, который открывает браузер с видео на YouTube.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-ytopen" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-ytopen">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_ytopen">C++ (Arduino Pro Micro)</span>
+                <button class="btn-copy" data-target="code-ytopen" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="pp">#include</span> <span class="str">"Keyboard.h"</span>
+
+<span class="kw">void</span> <span class="fn">setup</span>() {
+  Keyboard.<span class="fn">begin</span>();
+  <span class="fn">delay</span>(<span class="num">3000</span>);
+
+  Keyboard.<span class="fn">press</span>(KEY_LEFT_GUI);
+  Keyboard.<span class="fn">press</span>(<span class="num">'r'</span>);
+  <span class="fn">delay</span>(<span class="num">100</span>);
+  Keyboard.<span class="fn">releaseAll</span>();
+  <span class="fn">delay</span>(<span class="num">500</span>);
+
+  Keyboard.<span class="fn">print</span>(<span class="str">"cmd /c start https://www.youtube.com/watch?v=Qs4OcQNOM34"</span>);
+  Keyboard.<span class="fn">press</span>(KEY_RETURN);
+  Keyboard.<span class="fn">release</span>(KEY_RETURN);
+
+  Keyboard.<span class="fn">end</span>();
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {}</pre>
+            </div>
+          </div>
+
         </div>
       </div>
     </section>
@@ -334,7 +478,7 @@
           <div class="project-card animate-on-scroll">
             <img
               class="project-card-image"
-              src="https://picsum.photos/seed/ideas/800/500"
+              src="images/projects/placeholder-ideas.svg"
               alt="Ideas"
               loading="lazy"
             />

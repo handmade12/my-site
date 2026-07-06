@@ -9,8 +9,8 @@ function applyLanguage(lang) {
   if (!i18n[lang]) return;
   const t = i18n[lang];
 
-  // Elements with data-i18n
-  document.querySelectorAll('[data-i18n]').forEach(el => {
+  // Elements with data-i18n (skip btn-code — handled separately)
+  document.querySelectorAll('[data-i18n]:not(.btn-code)').forEach(el => {
     const key = el.getAttribute('data-i18n');
     if (t[key]) {
       el.innerHTML = t[key];
@@ -57,6 +57,31 @@ function applyLanguage(lang) {
   document.documentElement.lang = lang === 'ru' ? 'ru' : 'en';
 }
 
+/* ---- Hero typewriter effect ---- */
+function typeWriter(el, html, speed = 35) {
+  el.innerHTML = '';
+  let pos = 0;
+
+  function step() {
+    if (pos >= html.length) {
+      return;
+    }
+
+    if (html[pos] === '<') {
+      const end = html.indexOf('>', pos) + 1;
+      el.innerHTML += html.slice(pos, end);
+      pos = end;
+    } else {
+      el.innerHTML += html[pos];
+      pos++;
+    }
+
+    setTimeout(step, speed);
+  }
+
+  setTimeout(step, 600);
+}
+
 /* ---- i18n: detect & init ---- */
 function getInitialLang() {
   const saved = localStorage.getItem('lang');
@@ -73,6 +98,14 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLang = getInitialLang();
   applyLanguage(currentLang);
 
+  // Hero typewriter on initial load
+  const heroTitle = document.querySelector('h1[data-i18n="hero_title"]');
+  if (heroTitle && currentLang === 'ru') {
+    typeWriter(heroTitle, i18n.ru.hero_title);
+  } else if (heroTitle) {
+    typeWriter(heroTitle, i18n.en.hero_title);
+  }
+
   const langToggle = document.getElementById('langToggle');
   if (langToggle) {
     langToggle.addEventListener('click', () => {
@@ -85,6 +118,31 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  /* ---- Project filter tabs ---- */
+  const filterTabs = document.querySelectorAll('.filter-tab');
+  const projectCards = document.querySelectorAll('#arduino .project-card');
+
+  filterTabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      filterTabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+
+      const filter = tab.dataset.filter;
+      projectCards.forEach(card => {
+        if (card.dataset.category === filter) {
+          card.classList.remove('hidden');
+          card.classList.add('visible');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    });
+  });
+
+  // Apply initial filter on load
+  const activeTab = document.querySelector('.filter-tab.active');
+  if (activeTab) activeTab.click();
 
   /* ---- Header scroll effect ---- */
   const header = document.getElementById('header');
@@ -224,6 +282,41 @@ document.addEventListener('DOMContentLoaded', () => {
         setTimeout(() => {
           btn.textContent = t.btn_copy;
         }, 2000);
+      }
+    });
+  });
+
+  /* ---- Line numbers for code blocks ---- */
+  function addLineNumbers() {
+    document.querySelectorAll('.code-block pre').forEach(pre => {
+      // Skip if already numbered
+      if (pre.querySelector('.line-num')) return;
+
+      const html = pre.innerHTML;
+      const lines = html.split('\n');
+      pre.innerHTML = lines.map((line, i) => {
+        if (i === lines.length - 1 && line.trim() === '') return '';
+        return `<span class="line-num">${i + 1}</span>${line}`;
+      }).join('\n');
+    });
+  }
+  addLineNumbers();
+
+  // Re-add on code block open (content was hidden)
+  document.querySelectorAll('.btn-code').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const targetId = btn.dataset.target;
+      const codeBlock = document.getElementById(targetId);
+      if (codeBlock && codeBlock.classList.contains('open')) {
+        const pre = codeBlock.querySelector('pre');
+        if (pre && !pre.querySelector('.line-num')) {
+          const html = pre.innerHTML;
+          const lines = html.split('\n');
+          pre.innerHTML = lines.map((line, i) => {
+            if (i === lines.length - 1 && line.trim() === '') return '';
+            return `<span class="line-num">${i + 1}</span>${line}`;
+          }).join('\n');
+        }
       }
     });
   });

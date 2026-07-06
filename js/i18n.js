@@ -46,12 +46,12 @@ const i18n = {
     arduino_title: 'Эксперименты с микроконтроллерами',
     arduino_subtitle: 'Недавно увлёкся, но уже есть пара занятных штук.',
 
-    /* BadUSB card */
+    /* Pro Micro test */
     arduino_badusb_tag1: 'Pro Micro',
-    arduino_badusb_tag2: 'BadUSB',
-    arduino_badusb_tag3: 'HID',
-    arduino_badusb_title: 'BadUSB на Pro Micro',
-    arduino_badusb_desc: 'Arduino Pro Micro притворяется USB-клавиатурой. Открывает PowerShell, выводит ASCII-анимацию Never Gonna Give You Up, показывает сообщения в txt, запускает ссылки.',
+    arduino_badusb_tag2: 'Тест',
+    arduino_badusb_tag3: 'Leonardo',
+    arduino_badusb_title: 'Pro Micro: проверка связи',
+    arduino_badusb_desc: 'Базовый тест платы Pro Micro. Мигает встроенным светодиодом. В Arduino IDE нужно выбрать плату <strong>Arduino Leonardo</strong> — Pro Micro нет в списке, но они совместимы.',
     code_lang_badusb: 'C++ (Arduino Pro Micro)',
 
     /* Buzzer card */
@@ -60,6 +60,34 @@ const i18n = {
     arduino_buzzer_title: 'Кузнечик — мелодия на пищалке',
     arduino_buzzer_desc: 'Первый проект после покупки набора. Пьезопищалка (buzzer) играет мелодию «В траве сидел кузнечик» по нажатию кнопки. База, но с неё всё началось.',
     code_lang_buzzer: 'C++ (Arduino)',
+
+    /* Filter tabs */
+    filter_badusb: 'BadUSB',
+    filter_arduino: 'Arduino',
+
+    /* BadUSB: Rick Roll */
+    rickroll_tag1: 'Pro Micro',
+    rickroll_tag2: 'BadUSB',
+    rickroll_tag3: 'CMD',
+    rickroll_title: 'BadUSB: Rick Roll в CMD',
+    rickroll_desc: 'Pro Micro через Win+R запускает cmd, разворачивает окно, красит фон в хакерский зелёный и выводит ASCII-анимацию. Классика.',
+    code_lang_rickroll: 'C++ (Arduino Pro Micro)',
+
+    /* BadUSB: TXT message */
+    txtmsg_tag1: 'Pro Micro',
+    txtmsg_tag2: 'BadUSB',
+    txtmsg_tag3: 'PowerShell',
+    txtmsg_title: 'BadUSB: сообщение в .txt',
+    txtmsg_desc: 'Pro Micro через PowerShell создаёт .txt файл с кастомным сообщением и открывает его в Блокноте — быстро и без лишних окон.',
+    code_lang_txtmsg: 'C++ (Arduino Pro Micro)',
+
+    /* BadUSB: YouTube opener */
+    ytopen_tag1: 'Pro Micro',
+    ytopen_tag2: 'BadUSB',
+    ytopen_tag3: 'YouTube',
+    ytopen_title: 'BadUSB: открывает YouTube',
+    ytopen_desc: 'Pro Micro через Win+R запускает cmd, который открывает браузер с видео на YouTube.',
+    code_lang_ytopen: 'C++ (Arduino Pro Micro)',
 
     /* Ideas section */
     ideas_label: 'В планах',
@@ -135,12 +163,12 @@ const i18n = {
     arduino_title: 'Microcontroller Experiments',
     arduino_subtitle: 'Just started, but already have a few fun things going.',
 
-    /* BadUSB card */
+    /* Pro Micro test */
     arduino_badusb_tag1: 'Pro Micro',
-    arduino_badusb_tag2: 'BadUSB',
-    arduino_badusb_tag3: 'HID',
-    arduino_badusb_title: 'BadUSB on Pro Micro',
-    arduino_badusb_desc: 'Arduino Pro Micro posing as a USB keyboard. Opens PowerShell, prints ASCII animation of Never Gonna Give You Up, drops txt messages, opens links.',
+    arduino_badusb_tag2: 'Test',
+    arduino_badusb_tag3: 'Leonardo',
+    arduino_badusb_title: 'Pro Micro: blink test',
+    arduino_badusb_desc: 'Basic Pro Micro board test. Blinks the built-in LED. In Arduino IDE select <strong>Arduino Leonardo</strong> — Pro Micro is not in the list but they are compatible.',
     code_lang_badusb: 'C++ (Arduino Pro Micro)',
 
     /* Buzzer card */
@@ -149,6 +177,34 @@ const i18n = {
     arduino_buzzer_title: 'Grasshopper — buzzer melody',
     arduino_buzzer_desc: 'First project after getting the starter kit. Piezo buzzer plays "Grasshopper" melody on button press. Simple, but that\'s where it all began.',
     code_lang_buzzer: 'C++ (Arduino)',
+
+    /* Filter tabs */
+    filter_badusb: 'BadUSB',
+    filter_arduino: 'Arduino',
+
+    /* BadUSB: Rick Roll */
+    rickroll_tag1: 'Pro Micro',
+    rickroll_tag2: 'BadUSB',
+    rickroll_tag3: 'CMD',
+    rickroll_title: 'BadUSB: Rick Roll in CMD',
+    rickroll_desc: 'Pro Micro opens cmd via Win+R, maximizes the window, sets hacker-green background, and runs ASCII animation. A classic.',
+    code_lang_rickroll: 'C++ (Arduino Pro Micro)',
+
+    /* BadUSB: TXT message */
+    txtmsg_tag1: 'Pro Micro',
+    txtmsg_tag2: 'BadUSB',
+    txtmsg_tag3: 'PowerShell',
+    txtmsg_title: 'BadUSB: drop a .txt message',
+    txtmsg_desc: 'Pro Micro uses PowerShell to create a .txt file with a custom message and opens it in Notepad — fast and stealthy.',
+    code_lang_txtmsg: 'C++ (Arduino Pro Micro)',
+
+    /* BadUSB: YouTube opener */
+    ytopen_tag1: 'Pro Micro',
+    ytopen_tag2: 'BadUSB',
+    ytopen_tag3: 'YouTube',
+    ytopen_title: 'BadUSB: opens YouTube',
+    ytopen_desc: 'Pro Micro launches cmd via Win+R and opens a YouTube video in the browser.',
+    code_lang_ytopen: 'C++ (Arduino Pro Micro)',
 
     /* Ideas section */
     ideas_label: 'Plans',
