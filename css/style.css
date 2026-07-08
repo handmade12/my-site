@@ -530,6 +530,8 @@ img {
   overflow: hidden;
   border: 1px solid var(--border);
   transition: all var(--transition);
+  display: flex;
+  flex-direction: column;
 }
 
 .project-card:hover {
