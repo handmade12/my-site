@@ -97,12 +97,11 @@ document.addEventListener('DOMContentLoaded', () => {
   let currentLang = getInitialLang();
   applyLanguage(currentLang);
 
-  // Hero typewriter on initial load
+  // Hero typewriter on initial load (skip on mobile — too slow)
   const heroTitle = document.querySelector('h1[data-i18n="hero_title"]');
-  if (heroTitle && currentLang === 'ru') {
-    typeWriter(heroTitle, i18n.ru.hero_title);
-  } else if (heroTitle) {
-    typeWriter(heroTitle, i18n.en.hero_title);
+  if (heroTitle && window.innerWidth > 768) {
+    const text = currentLang === 'ru' ? i18n.ru.hero_title : i18n.en.hero_title;
+    typeWriter(heroTitle, text, 15);
   }
 
   const langToggle = document.getElementById('langToggle');
