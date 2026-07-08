@@ -547,6 +547,13 @@ img {
 
 .project-card-body {
   padding: 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.project-card-body .btn {
+  margin-top: auto;
 }
 
 .project-card-tags {
