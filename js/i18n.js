@@ -41,6 +41,15 @@ const i18n = {
     project_bot_desc: 'Telegram-бот для тренировок: логирование подходов, статистика, напоминалки. Написан на Python. Сейчас дорабатывается — хочу добавить графики прогресса и автопланы.',
     project_bot_btn: 'Открыть в Telegram →',
 
+    /* Project card: Gamepad Tester */
+    project_gp_tag1: 'HTML',
+    project_gp_tag2: 'CSS',
+    project_gp_tag3: 'JS',
+    project_gp_tag4: 'Gamepad API',
+    project_gp_title: 'Gamepad Tester',
+    project_gp_desc: 'Проверка кнопок геймпада в браузере. Три раскладки: Xbox, PlayStation, Other. 5 языков. Киберпанк-дизайн.',
+    project_gp_btn: 'Открыть →',
+
     /* Arduino section */
     arduino_label: 'На Arduino',
     arduino_title: 'Эксперименты с микроконтроллерами',
@@ -156,6 +165,15 @@ const i18n = {
     project_bot_title: 'MRX TRAINING BOT',
     project_bot_desc: 'A Telegram bot for workouts: log sets, stats, reminders. Written in Python. Currently working on adding progress charts and auto-plans.',
     project_bot_btn: 'Open in Telegram →',
+
+    /* Project card: Gamepad Tester */
+    project_gp_tag1: 'HTML',
+    project_gp_tag2: 'CSS',
+    project_gp_tag3: 'JS',
+    project_gp_tag4: 'Gamepad API',
+    project_gp_title: 'Gamepad Tester',
+    project_gp_desc: 'Test your gamepad buttons in the browser. Three layouts: Xbox, PlayStation, Other. 5 languages. Cyberpunk design.',
+    project_gp_btn: 'Open →',
 
     /* Arduino section */
     arduino_label: 'Arduino',
