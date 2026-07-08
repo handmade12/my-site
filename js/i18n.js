@@ -102,8 +102,7 @@ const i18n = {
     ideas_item1: '🔊 Отвлекающее устройство — Bluetooth-модуль, удалённый запуск звука',
     ideas_item2: '🚗 Джампер — машинка с управлением через ПК или телефон',
     ideas_item3: '💡 Умный свет — управление освещением в комнате с голосом/кнопкой',
-    ideas_item4: '🎤 Смена голоса — через ПК, обработать микрофон в реальном времени',
-    ideas_item5: '⚡ BadUSB: перезагрузка ПК, перехват камеры, неуязвимые видео',
+    ideas_item4: '☀️ Метеостанция на солнце — солнечная панель, 18650, DHT22 (температура + влажность). Раз в час просыпается и шлёт данные в Telegram',
 
     /* Page metadata */
     page_title: 'Кирилл Сорокин',
@@ -219,8 +218,7 @@ const i18n = {
     ideas_item1: '🔊 Distraction device — Bluetooth module, remote sound trigger',
     ideas_item2: '🚗 Jumper — RC car controlled via PC or phone',
     ideas_item3: '💡 Smart light — voice/button controlled room lighting',
-    ideas_item4: '🎤 Voice changer — real-time microphone processing on PC',
-    ideas_item5: '⚡ BadUSB: PC reboot, camera hijack, unclosable videos',
+    ideas_item4: '☀️ Solar weather station — solar panel, 18650, DHT22 (temp + humidity). Wakes every hour and sends data to Telegram',
 
     /* Page metadata */
     page_title: 'Kirill Sorokin',
