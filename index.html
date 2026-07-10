@@ -203,7 +203,50 @@
 
         <div class="projects-grid">
 
-          <!-- Arduino Project 1: Pro Micro test -->
+          <!-- Arduino Project 1: Blink -->
+          <div class="project-card animate-on-scroll" data-category="arduino">
+            <img
+              class="project-card-image"
+              src="images/projects/arduino-board.jpg"
+              alt="Arduino Blink"
+              loading="lazy"
+            />
+            <div class="project-card-body">
+              <div class="project-card-tags">
+                <span class="project-tag" data-i18n="blink_tag1">Arduino</span>
+                <span class="project-tag green" data-i18n="blink_tag2">Blink</span>
+                <span class="project-tag purple" data-i18n="blink_tag3">LED</span>
+              </div>
+              <h3 class="project-card-title" data-i18n="blink_title">Blink — мигаем светодиодом</h3>
+              <p class="project-card-desc" data-i18n="blink_desc">
+                Самый первый проект: встроенный светодиод мигает с интервалом 1 секунда.
+                С этого начинают все. Проверка платы, Arduino IDE и понимание базы.
+              </p>
+              <div class="project-card-actions">
+                <button class="btn-code" data-target="code-blink" data-i18n="btn_show_code" data-i18n-alt="btn_hide_code">
+                  <span class="icon">▼</span> Показать код
+                </button>
+              </div>
+            </div>
+            <div class="code-block" id="code-blink">
+              <div class="code-header">
+                <span class="code-lang" data-i18n="code_lang_blink">C++ (Arduino)</span>
+                <button class="btn-copy" data-target="code-blink" data-i18n="btn_copy">📋 Копировать</button>
+              </div>
+              <pre><span class="kw">void</span> <span class="fn">setup</span>() {
+  <span class="fn">pinMode</span>(LED_BUILTIN, OUTPUT);
+}
+
+<span class="kw">void</span> <span class="fn">loop</span>() {
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, HIGH);
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+  <span class="fn">digitalWrite</span>(LED_BUILTIN, LOW);
+  <span class="fn">delay</span>(<span class="num">1000</span>);
+}</pre>
+            </div>
+          </div>
+
+          <!-- Arduino Project 2: Pro Micro test -->
           <div class="project-card animate-on-scroll" data-category="badusb">
             <img
               class="project-card-image"

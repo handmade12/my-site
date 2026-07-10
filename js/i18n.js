@@ -55,6 +55,14 @@ const i18n = {
     arduino_title: 'Эксперименты с микроконтроллерами',
     arduino_subtitle: 'Недавно увлёкся, но уже есть пара занятных штук.',
 
+    /* Blink */
+    blink_tag1: 'Arduino',
+    blink_tag2: 'Blink',
+    blink_tag3: 'LED',
+    blink_title: 'Blink — мигаем светодиодом',
+    blink_desc: 'Самый первый проект: встроенный светодиод мигает с интервалом 1 секунда. С этого начинают все. Проверка платы, Arduino IDE и понимание базы.',
+    code_lang_blink: 'C++ (Arduino)',
+
     /* Pro Micro test */
     arduino_badusb_tag1: 'Pro Micro',
     arduino_badusb_tag2: 'Тест',
@@ -179,6 +187,14 @@ const i18n = {
     arduino_label: 'Arduino',
     arduino_title: 'Microcontroller Experiments',
     arduino_subtitle: 'Just started, but already have a few fun things going.',
+
+    /* Blink */
+    blink_tag1: 'Arduino',
+    blink_tag2: 'Blink',
+    blink_tag3: 'LED',
+    blink_title: 'Blink — LED blink',
+    blink_desc: 'The very first project: built-in LED blinks every 1 second. Everyone starts here. Board check, Arduino IDE, understanding the basics.',
+    code_lang_blink: 'C++ (Arduino)',
 
     /* Pro Micro test */
     arduino_badusb_tag1: 'Pro Micro',
