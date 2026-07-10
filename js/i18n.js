@@ -47,7 +47,7 @@ const i18n = {
     project_gp_tag3: 'JS',
     project_gp_tag4: 'Gamepad API',
     project_gp_title: 'Gamepad Tester',
-    project_gp_desc: 'Проверка геймпада в браузере: кнопки, стики, триггеры, вибрация. Раскладки Xbox, PlayStation, Other. Перевод на 5 языков. Киберпанк-дизайн.',
+    project_gp_desc: 'Проверка геймпада в браузере: кнопки, стики, триггеры, вибрация. Раскладки Xbox, PlayStation, Other. Перевод на 5 языков.',
     project_gp_btn: 'Открыть →',
 
     /* Arduino section */
@@ -172,7 +172,7 @@ const i18n = {
     project_gp_tag3: 'JS',
     project_gp_tag4: 'Gamepad API',
     project_gp_title: 'Gamepad Tester',
-    project_gp_desc: 'Test your gamepad in the browser: buttons, sticks, triggers, vibration. Layouts: Xbox, PlayStation, Other. 5 languages. Cyberpunk design.',
+    project_gp_desc: 'Test your gamepad in the browser: buttons, sticks, triggers, vibration. Layouts: Xbox, PlayStation, Other. 5 languages.',
     project_gp_btn: 'Open →',
 
     /* Arduino section */
