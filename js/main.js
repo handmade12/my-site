@@ -248,7 +248,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---- Copy code button (i18n-aware) ---- */
+  /* ---- Copy code button (i18n-aware, strips line numbers) ---- */
   document.querySelectorAll('.btn-copy').forEach(btn => {
     btn.addEventListener('click', async () => {
       const targetId = btn.dataset.target;
@@ -258,11 +258,14 @@ document.addEventListener('DOMContentLoaded', () => {
       const codePre = codeBlock.querySelector('pre');
       if (!codePre) return;
 
-      const codeText = codePre.textContent || codePre.innerText;
+      // Clone to strip line-number spans without affecting DOM
+      const clone = codePre.cloneNode(true);
+      clone.querySelectorAll('.line-num').forEach(el => el.remove());
+      const codeText = clone.textContent.trim();
       const t = i18n[currentLang];
 
       try {
-        await navigator.clipboard.writeText(codeText.trim());
+        await navigator.clipboard.writeText(codeText);
         btn.textContent = t.btn_copied;
         btn.classList.add('copied');
         setTimeout(() => {
@@ -271,7 +274,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 2000);
       } catch (err) {
         const textarea = document.createElement('textarea');
-        textarea.value = codeText.trim();
+        textarea.value = codeText;
         document.body.appendChild(textarea);
         textarea.select();
         document.execCommand('copy');

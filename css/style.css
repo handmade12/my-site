@@ -902,13 +902,16 @@ img {
 .code-block .tp { color: #a78bfa; }    /* types */
 .code-block .pp { color: #f97316; }    /* preprocessor */
 
-/* --- Line numbers --- */
+/* --- Line numbers (visual only, excluded from copy) --- */
 .line-num {
   display: inline-block;
   width: 36px;
   margin-right: 12px;
   color: #3a3a3a;
   text-align: right;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   user-select: none;
   font-size: 0.8rem;
 }
