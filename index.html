@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -10,6 +10,23 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='6' fill='%23f59e0b'/><text x='16' y='23' font-size='20' font-weight='800' font-family='Inter,sans-serif' text-anchor='middle' fill='%23000'>K</text></svg>" />
+  <script>
+    // FOUC-prevention: set <html lang> before body parses. Mirrors js/main.js::getInitialLang.
+    (function () {
+      var RU = new Set(['ru','uk','be','kk','uz','ky','tg','tk','az','hy','ka','ro']);
+      var saved;
+      try { saved = localStorage.getItem('lang'); } catch (e) {}
+      var lang;
+      if (saved === 'ru' || saved === 'en') {
+        lang = saved;
+      } else {
+        var raw = (navigator.language || navigator.userLanguage || 'en')
+          .toLowerCase().split('-')[0];
+        lang = RU.has(raw) ? 'ru' : 'en';
+      }
+      document.documentElement.lang = lang;
+    })();
+  </script>
 </head>
 <body>
 

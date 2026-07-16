@@ -82,11 +82,19 @@ function typeWriter(el, html, speed = 35) {
 }
 
 /* ---- i18n: detect & init ---- */
+// Browser languages mapped to Russian UI (СНГ + Russian-speaking locales)
+const RU_LANG_CODES = new Set([
+  'ru', 'uk', 'be', 'kk', 'uz', 'ky', 'tg', 'tk',
+  'az', 'hy', 'ka', 'ro'
+]);
+
 function getInitialLang() {
   const saved = localStorage.getItem('lang');
   if (saved) return saved;
-  const browserLang = navigator.language || navigator.userLanguage || '';
-  return browserLang.startsWith('ru') ? 'ru' : 'en';
+  const raw = (navigator.language || navigator.userLanguage || '')
+    .toLowerCase()
+    .split('-')[0]; // e.g. "ru-RU" -> "ru", "uz-UZ-Latn" -> "uz"
+  return RU_LANG_CODES.has(raw) ? 'ru' : 'en';
 }
 
 /* ============================================ */
